@@ -8,3 +8,19 @@ Honestly, not the best naming scheme for my backups, but it worked for what I ne
 - - -
 ## nginx_check.sh
 This checks whether NGINX has been shut down, if it has it starts it back up (probably a better way but whatever)
+- - -
+## JavaProjectBootstrapper.sh
+This script bootstraps a new Java project. The cli takes either a name or a name and author
+```bash
+./JavaProjectBootstrapper.sh NewProject "John Deere"
+```
+Creates the following file structure:  
+```
+ProjectName
+  - README.md
+  - compile.sh
+  - src
+    - Main.java
+  - build
+  - tests
+```
