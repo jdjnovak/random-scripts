@@ -31,6 +31,10 @@ fi
 echo -e "#!/usr/bin/bash\nif ! command -v javac &> /dev/null\nthen\n\techo \"ERROR: javac not installed or on PATH\"\n\texit\nfi\njavac -d build src/*.java" > compile.sh
 chmod u+x compile.sh
 
+# Create the run script and make it executable
+echo -e "#!/usr/bin/bash\nif ! command -v java &> /dev/null\nthen\n\techo \"ERROR: java not installed or on PATH\"\n\texit\nfi\ncd build\njava Main\ncd .." > run.sh
+chmod u+x run.sh
+
 # Add main class to the src folder
 cd src
 echo -e "public class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Can I use python instead?\");\n\t}\n}" > Main.java
